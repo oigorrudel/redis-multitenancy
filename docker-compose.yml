@@ -1,0 +1,22 @@
+version: "3.9"
+
+services:
+  redis1:
+    image: redis:7.2
+    container_name: redis1
+    ports:
+      - "6379:6379"
+    networks:
+      - redis-net
+
+  redis2:
+    image: redis:7.2
+    container_name: redis2
+    ports:
+      - "6380:6379"
+    networks:
+      - redis-net
+
+networks:
+  redis-net:
+    driver: bridge
